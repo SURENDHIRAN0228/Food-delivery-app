@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const mondbUrl = "mongodb://127.0.0.1:27017/GoFood"
+const mondbUrl = "mongodb+srv://surendhar11091:WfDkKSWNuEJrWTVE@gofood.wv2ow.mongodb.net/?retryWrites=true&w=majority&appName=GoFood"
+//const mondbUrl = "mongodb://127.0.0.1:27017/GoFood"  WfDkKSWNuEJrWTVE
 
 const connectDb = async () => {
     try {
