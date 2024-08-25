@@ -2,15 +2,17 @@ const express = require('express')
 const app = express()
 const port = 5000
 
-const cors = require('cors');
-app.use(cors());
-
 const http = require('http').Server(app)
+
+const cors = require('cors');
+http.use(cors());
+
+
 
 const mongoDB = require("./db")
 mongoDB.connectDb();
 
-app.use((req, res, next) => {
+http.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "food-delivery-app-frontend-chi.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
@@ -19,13 +21,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.json())
+http.use(express.json())
 
-app.get('/', (req, res) => {
+http.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.use('/api/auth', require('./Routes/Auth'));
+http.use('/api/auth', require('./Routes/Auth'));
 
 http.listen(port, () => {
   console.log(`Example app listening on food-delivery-app-frontend-chi.vercel.app`)
