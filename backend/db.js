@@ -7,7 +7,8 @@ const connectDb = async () => {
     try {
         await mongoose.connect(mondbUrl, {
              useNewUrlParser: true,
-              useUnifiedTopology: true,
+             useUnifiedTopology: true,
+             serverSelectionTimeoutMS: 5000
         });
         console.log("DB Connected");
     } catch (error) {
