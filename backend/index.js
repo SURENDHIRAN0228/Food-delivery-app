@@ -13,7 +13,7 @@ const mongoDB = require("./db")
 mongoDB.connectDb();
 
 http.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "food-delivery-app-frontend-chi.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
