@@ -8,7 +8,7 @@ export default function MyOrder() {
 
     const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch("food-delivery-app-api-flame.vercel.app/api/auth/myOrderData", {
+        await fetch("https://food-delivery-app-api-flame.vercel.app/api/auth/myOrderData", {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',
