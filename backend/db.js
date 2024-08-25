@@ -5,7 +5,10 @@ const mondbUrl = "mongodb+srv://surendhar11091:WfDkKSWNuEJrWTVE@gofood.wv2ow.mon
 
 const connectDb = async () => {
     try {
-        await mongoose.connect(mondbUrl);
+        await mongoose.connect(mondbUrl, {
+             useNewUrlParser: true,
+              useUnifiedTopology: true,
+        });
         console.log("DB Connected");
     } catch (error) {
         throw error;
