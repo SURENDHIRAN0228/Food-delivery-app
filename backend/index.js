@@ -14,7 +14,7 @@ app.use(cors({
 
 
 const mongoDB = require("./db")
-//mongoDB.connectDb();
+mongoDB.connectDb();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://food-delivery-app-frontend-chi.vercel.app");
@@ -28,8 +28,8 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  //res.send('Hello World!')
-  mongoDB.connectDb();
+  res.send('Hello World!')
+  //mongoDB.connectDb();
 })
 
 app.use('/api/auth', require('./Routes/Auth'));
