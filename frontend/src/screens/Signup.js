@@ -37,8 +37,6 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    body1: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, location: credentials.geolocation })
-    console.log(body1);
     const response = await fetch("food-delivery-app-api-flame.vercel.app/api/auth/createuser", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
