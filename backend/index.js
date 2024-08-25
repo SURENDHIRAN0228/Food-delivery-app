@@ -11,7 +11,7 @@ const mongoDB = require("./db")
 mongoDB.connectDb();
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "food-delivery-app-frontend-chi.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', require('./Routes/Auth'));
 
 http.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}`)
+  console.log(`Example app listening on food-delivery-app-frontend-chi.vercel.app`)
 })
 
 /*const express = require('express')
